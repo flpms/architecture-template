@@ -1,36 +1,38 @@
-# Architecture Template
+# sv
 
-A comprehensive architectural guide for building SvelteKit applications using RAG (Retrieval-Augmented Generation) via Markdown to guide AI assistants like GitHub Copilot through the development process.
+Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
 
-## Overview
+## Creating a project
 
-This repository contains a detailed architecture template that serves as context for AI-assisted development, preventing hallucinations and ensuring consistent architectural patterns throughout the development process.
+If you're seeing this, you've probably already done this step. Congrats!
 
-## Key Features
+```sh
+# create a new project in the current directory
+npx sv create
 
-- **Atomic Design Pattern** - Structured component hierarchy from atoms to templates
-- **Functional Programming** - Pure functions and immutable data patterns
-- **DDAU (Data Down, Actions Up)** - Clear data flow architecture
-- **Test-Driven Development** - Comprehensive testing strategy with Vitest
-- **SvelteKit + Svelte 5** - Modern reactive framework with latest features
-- **Service Layer Architecture** - Centralized API handling and external integrations
-- **Conventional Commits** - Structured commit messages with commitlint
+# create a new project in my-app
+npx sv create my-app
+```
 
-## Usage
+## Developing
 
-Use the `ARCHITECTURE_TEMPLATE.md` file as context when working with AI assistants to ensure:
-- Consistent architectural decisions
-- Proper implementation patterns
-- Comprehensive test coverage
-- Maintainable and scalable code structure
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
-## Getting Started
+```sh
+npm run dev
 
-1. Copy the architecture template to your project
-2. Customize it for your specific requirements
-3. Use it as RAG context for AI-assisted development
-4. Follow the TDD workflow outlined in the template
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
 
----
+## Building
 
-*This template helps developers maintain architectural consistency while leveraging AI assistance for faster, more reliable development.*
+To create a production version of your app:
+
+```sh
+npm run build
+```
+
+You can preview the production build with `npm run preview`.
+
+> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
