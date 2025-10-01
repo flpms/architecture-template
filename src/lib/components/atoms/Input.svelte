@@ -6,6 +6,7 @@
 		value?: string;
 		disabled?: boolean;
 		required?: boolean;
+		hasError?: boolean;
 		class?: string;
 		onchange?: (value: string) => void;
 	}
@@ -17,6 +18,7 @@
 		value = $bindable(''),
 		disabled = false,
 		required = false,
+		hasError = false,
 		class: className = '',
 		onchange
 	}: Props = $props();
@@ -35,7 +37,7 @@
 	{value}
 	{disabled}
 	{required}
-	class="input {className}"
+	class="input {hasError ? 'error' : ''} {className}"
 	oninput={handleInput}
 	data-testid="input"
 />
@@ -62,7 +64,12 @@
 		cursor: not-allowed;
 	}
 
-	.input:invalid {
+	.input.error {
 		border-color: #ef4444;
+	}
+
+	.input.error:focus {
+		border-color: #ef4444;
+		box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
 	}
 </style>

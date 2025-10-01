@@ -40,8 +40,8 @@
 		bind:value
 		{disabled}
 		{required}
+		hasError={!!error}
 		{onchange}
-		class={error ? 'error' : ''}
 	/>
 	{#if error}
 		<span class="error-message" data-testid="error-message">{error}</span>
@@ -58,14 +58,5 @@
 		color: #ef4444;
 		font-size: 0.875rem;
 		margin-top: 0.25rem;
-	}
-
-	:global(.input-field .input.error) {
-		border-color: #ef4444;
-	}
-
-	:global(.input-field .input.error:focus) {
-		border-color: #ef4444;
-		box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
 	}
 </style>

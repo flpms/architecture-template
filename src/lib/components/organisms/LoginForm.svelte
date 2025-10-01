@@ -71,7 +71,7 @@
 	});
 </script>
 
-<form class="login-form" onsubmit={handleSubmit} data-testid="login-form">
+<form class="login-form" onsubmit={handleSubmit} data-testid="login-form" novalidate>
 	<div class="form-header">
 		<h2>Login</h2>
 		<p>Enter your credentials to access the application</p>
