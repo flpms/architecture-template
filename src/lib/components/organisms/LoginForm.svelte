@@ -77,9 +77,9 @@
 		<p>Enter your credentials to access the application</p>
 	</div>
 
-	{#if authStore.state.error}
+	{#if $authStore.error}
 		<div class="error-alert" data-testid="login-error">
-			{authStore.state.error}
+			{$authStore.error}
 		</div>
 	{/if}
 
@@ -92,7 +92,7 @@
 			bind:value={credentials.username}
 			required
 			error={errors.username}
-			disabled={authStore.state.isLoading}
+			disabled={$authStore.isLoading}
 			onchange={handleUsernameChange}
 		/>
 
@@ -104,7 +104,7 @@
 			bind:value={credentials.password}
 			required
 			error={errors.password}
-			disabled={authStore.state.isLoading}
+			disabled={$authStore.isLoading}
 			onchange={handlePasswordChange}
 		/>
 	</div>
@@ -114,11 +114,11 @@
 			type="submit"
 			variant="primary"
 			size="lg"
-			loading={authStore.state.isLoading}
-			disabled={authStore.state.isLoading}
+			loading={$authStore.isLoading}
+			disabled={$authStore.isLoading}
 			class="login-button"
 		>
-			{authStore.state.isLoading ? 'Signing in...' : 'Sign In'}
+			{$authStore.isLoading ? 'Signing in...' : 'Sign In'}
 		</Button>
 	</div>
 

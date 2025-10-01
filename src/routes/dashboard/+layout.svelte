@@ -6,20 +6,18 @@
 	let { children } = $props();
 
 	// Redirect to login if not authenticated
-	$effect(() => {
-		if (!authStore.state.isLoading && !authStore.state.isAuthenticated) {
-			goto('/');
-		}
-	});
+	$: if (!$authStore.isLoading && !$authStore.isAuthenticated) {
+		goto('/');
+	}
 </script>
 
 <!-- Show loading state while checking authentication -->
-{#if authStore.state.isLoading}
+{#if $authStore.isLoading}
 	<div class="loading-container">
 		<div class="loading-spinner"></div>
 		<p>Loading...</p>
 	</div>
-{:else if authStore.state.isAuthenticated}
+{:else if $authStore.isAuthenticated}
 	{@render children?.()}
 {/if}
 

@@ -16,7 +16,7 @@
 		<div class="header-content">
 			<h1>GitHub Repository Viewer</h1>
 			<div class="user-info">
-				<span>Welcome, {authStore.state.user?.username}!</span>
+				<span>Welcome, {$authStore.user?.username}!</span>
 				<Button variant="secondary" onclick={handleLogout}>
 					Logout
 				</Button>
