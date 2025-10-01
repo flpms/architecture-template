@@ -6,9 +6,11 @@
 	let { children } = $props();
 
 	// Redirect to login if not authenticated
-	$: if (!$authStore.isLoading && !$authStore.isAuthenticated) {
-		goto('/');
-	}
+	$effect(() => {
+		if (!$authStore.isLoading && !$authStore.isAuthenticated) {
+			goto('/');
+		}
+	});
 </script>
 
 <!-- Show loading state while checking authentication -->

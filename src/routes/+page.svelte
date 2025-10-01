@@ -5,9 +5,11 @@
 	import { goto } from '$app/navigation';
 
 	// Redirect to dashboard if already authenticated
-	$: if ($authStore.isAuthenticated) {
-		goto('/dashboard');
-	}
+	$effect(() => {
+		if ($authStore.isAuthenticated) {
+			goto('/dashboard');
+		}
+	});
 
 	function handleLoginSuccess() {
 		goto('/dashboard');
