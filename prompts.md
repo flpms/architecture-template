@@ -212,7 +212,7 @@ após digitar admin/admin para demo recebo o seguinte erro
 ```
 
 **Solução Implementada:**
-- Substituição de `$:` por `$effect()` 
+- Substituição de `$:` por `$effect()`
 - Correção da compatibilidade com Svelte 5 runes mode
 - Manutenção da funcionalidade de redirecionamento
 

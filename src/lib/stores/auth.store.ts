@@ -15,7 +15,7 @@ function createAuthStore() {
 	// Initialize auth state on store creation
 	async function initialize() {
 		update(state => ({ ...state, isLoading: true }));
-		
+
 		try {
 			const user = await authService.getCurrentUser();
 			if (user) {
